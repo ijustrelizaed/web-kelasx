@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('siswa_searches', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('jabatan');
+            $table->string('jabatan')->nullable();
+            $table->string('photo');
             $table->timestamps();
         });
     }
