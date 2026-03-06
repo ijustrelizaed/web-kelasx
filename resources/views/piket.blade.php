@@ -1,4 +1,99 @@
 <x-layout>
+        <table>
+        <thead>
+            <th>Senin</th>
+            <th>Selasa</th>
+            <th>Rabu</th>
+            <th>Kamis</th>
+            <th>Jumat</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+            <tr>
+                <td>Industri PPLG</td>
+                <td>Bahasa Indonesia</td>
+                <td>IPA</td>
+                <td>IPS</td>
+                <td>Bahasa Inggris</td>
+            </tr>
+        </tbody>
+    </table>
     <h1>ini halaman piket</h1>
 <div class="card" style="padding: 0; overflow: hidden;">
     <table style="width: 100%; border-collapse: collapse;">
