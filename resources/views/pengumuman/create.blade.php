@@ -1,4 +1,5 @@
 <x-layout>
+<h3 style="margin-bottom: 20px;"><i class="fas fa-bullhorn" style="color: var(--primary-red);"></i> Pengumuman Kelas</h3>
     <form action="{{ route('pengumuman.store') }}" method="POST">
         @csrf
         <div>

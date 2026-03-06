@@ -1,8 +1,10 @@
 <x-layout>
-    <form action="/siswa/search" method="GET">
-        <input type="text" name="keyword" placeholder="Cari siswa...">
-        <button type="submit">Cari</button>
-    </form>
+    <div class="search-container">
+        <form action="{{ route('siswa.search') }}" method="GET" class="search-form">
+            <input type="text" name="keyword" placeholder="Cari siswa..." class="search-input">
+            <button type="submit" class="search-button">Cari</button>
+        </form>
+    </div>
     <br>
     <br>
     <br>
