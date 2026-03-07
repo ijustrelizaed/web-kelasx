@@ -9,6 +9,7 @@
     <br>
     <br>
     @foreach ($data as $wargakelas)
+        <img src="{{ asset($wargakelas->image) }}" alt="gambar orang">
         <p>{{ $wargakelas->nama }}</p>
         <p>{{ $wargakelas->jabatan }}</p>
     @endforeach
