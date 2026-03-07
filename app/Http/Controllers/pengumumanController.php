@@ -74,6 +74,7 @@ class pengumumanController extends Controller
         ]);
 
         $pengumuman = pengumuman_crud::findOrFail($id);
+        
         $pengumuman->update([
             'judul' => $request->judul,
             'isi' => $request->isi,
