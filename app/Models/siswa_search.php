@@ -9,5 +9,5 @@ class siswa_search extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'jabatan'];
+    protected $fillable = ['nama', 'jabatan', 'photo'];
 }
