@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\siswa_search;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
-use illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 
 class siswaController extends Controller
 {
@@ -39,7 +39,7 @@ class siswaController extends Controller
         ]);
 
         $image = $request->file('image');
-        $image->storeAs('public', $image->hashName());
+        $image->storeAs('public/image', $image->hashName());
         
         siswa_search::create([
             'nama' => $request->nama,
@@ -72,28 +72,31 @@ class siswaController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id) : RedirectResponse
-    {
+    {   
+        $editsiswa = siswa_search::findOrFail($id);
+
         $request->validate([   
             'nama' => 'required|string|min:3',
             'jabatan' => 'required|string|min:10',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $update_siswa = siswa_search::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            storage::delete('image/' . $update_siswa->image);
+            if($editsiswa->image) {
+                Storage::delete('public/image/' . $editsiswa->image);
+            }
 
             $image = $request->file('image');
-            $image->storeAs('image', $image->hashName());
+            $image->storeAs('public/image/', $image->hashName());
 
-            $update_siswa->update([
+            $editsiswa->update([
                 'nama' => $request->nama,
                 'jabatan' => $request->jabatan,
                 'image' => $image->hashName(),
             ]);
         } else {
-            $update_siswa->update([
+            $editsiswa->update([
                 'nama' => $request->nama,
                 'jabatan' => $request->jabatan,
             ]);

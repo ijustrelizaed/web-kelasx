@@ -10,7 +10,7 @@
     <br>
     <br>
     @foreach ($siswa as $wargakelas)
-        <img src="{{ asset('storage/'. $wargakelas->image) }}" alt="gambar orang" loading="lazy">
+        <img src="{{ asset('storage/image/'. $wargakelas->image) }}" alt="gambar orang" loading="lazy">
         <p>{{ $wargakelas->nama }}</p>
         <p>{{ $wargakelas->jabatan }}</p>
         <a href="{{ route('siswa.edit', $wargakelas->id) }}">edit</a>
