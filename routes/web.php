@@ -12,8 +12,8 @@ Route::get('/piket', function () {
     return view('piket');
 });
 
-Route::get('/siswa', [siswaController::class, 'index'])->name('siswa.index');
 Route::get('/siswa/search', [siswaController::class, 'search'])->name('siswa.search');
+Route::resource('/siswa', siswaController::class);
     
 Route::resource('/pengumuman', pengumumanController::class);
 
