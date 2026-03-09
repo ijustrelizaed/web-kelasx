@@ -1,6 +1,9 @@
 :root {
     --primary-red: #ef4444;
     --primary-yellow: #f59e0b;
+    --primary-green: rgb(76, 209, 76);
+    --primary-blue: rgb(106, 106, 224);
+    --primary-brown: brown;
     --bg-light: #f8fafc;
     --text-dark: #334155;
     --card-white: #ffffff;
@@ -287,3 +290,16 @@ main {
 .search-button:hover {
     background-color: #dc2626;
 }
+
+tr td {
+    border: 4px solid var(--primary-red);
+}
+
+table {
+    border-radius: 20px;
+}
+
+tr td li {
+    list-style: none;
+}
+
