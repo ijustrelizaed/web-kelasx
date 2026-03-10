@@ -11,7 +11,6 @@
 <body>
     <header class="main-header">
         <div class="container header-content">
-            <img src="{{ asset('images/abel.jpeg') }}" alt="beltem" class="logo">
             <div class="brand">
                 <h1>X RPL 1</h1>
                 <p>Class Management Dashboard</p>

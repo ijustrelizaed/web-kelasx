@@ -1,5 +1,5 @@
 <x-layout>
-    <img src="{{ asset('storage/image/'. $onesiswa->image) }}" alt="gambar orang" loading="lazy">
-        <p>{{ $onesiswa->nama }}</p>
-        <p>{{ $onesiswa->jabatan }}</p>
+    <img src="{{ asset('storage/image/'. $siswa->image) }}" alt="gambar orang" loading="lazy">
+        <p>{{ $siswa->nama }}</p>
+        <p>{{ $siswa->jabatan }}</p>
 </x-layout>

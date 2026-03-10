@@ -55,8 +55,8 @@ class siswaController extends Controller
      */
     public function show($id) : View
     {   
-        $onesiswa = siswa_search::findOrFail($id);
-        return view('siswa.show', compact('onesiswa'));
+        $siswa = siswa_search::findOrFail($id);
+        return view('siswa.show', compact('siswa'));
     }
 
     /**
@@ -64,8 +64,8 @@ class siswaController extends Controller
      */
     public function edit($id) : View
     {   
-        $editsiswa = siswa_search::findOrFail($id);
-        return view('siswa.edit', compact('editsiswa'));
+        $siswa = siswa_search::findOrFail($id);
+        return view('siswa.edit', compact('siswa'));
     }
 
     /**
@@ -73,30 +73,30 @@ class siswaController extends Controller
      */
     public function update(Request $request, $id) : RedirectResponse
     {   
-        $editsiswa = siswa_search::findOrFail($id);
+        $siswa = siswa_search::findOrFail($id);
 
         $request->validate([   
-            'nama' => 'required|string|min:3',
-            'jabatan' => 'required|string|min:10',
+            'nama' => 'required|string',
+            'jabatan' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
 
         if ($request->hasFile('image')) {
-            if($editsiswa->image) {
-                Storage::delete('public/image/' . $editsiswa->image);
+            if($siswa->image) {
+                Storage::delete('public/image/' . $siswa->image);
             }
 
             $image = $request->file('image');
-            $image->storeAs('public/image/', $image->hashName());
+            $image->storeAs('public/image', $image->hashName());
 
-            $editsiswa->update([
+            $siswa->update([
                 'nama' => $request->nama,
                 'jabatan' => $request->jabatan,
                 'image' => $image->hashName(),
             ]);
         } else {
-            $editsiswa->update([
+            $siswa->update([
                 'nama' => $request->nama,
                 'jabatan' => $request->jabatan,
             ]);
@@ -110,8 +110,8 @@ class siswaController extends Controller
      */
     public function destroy($id) : RedirectResponse
     {
-        $deletesiswa = siswa_search::findOrFail($id);
-        $deletesiswa->delete();
+        $siswa = siswa_search::findOrFail($id);
+        $siswa->delete();
         
         return redirect()->route('siswa.index')->with('success', 'Data berhasil diupdate.');
     }

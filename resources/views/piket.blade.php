@@ -1,5 +1,4 @@
 <x-layout>
-    <h1>ini halaman piket</h1>
 <div class="card" style="padding: 0; overflow: hidden;">
     <table style="width: 100%; border-collapse: collapse;">
         <thead style="background: #f1f5f9;">
