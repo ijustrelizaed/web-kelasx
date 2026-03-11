@@ -14,6 +14,24 @@
     --hover-clr: #f3f4f6;
 }
 
+.darkmode{
+    --primary-red: #ef4444;
+    --primary-yellow: #f59e0b;
+    --primary-green: rgb(76, 209, 76);
+    --primary-blue: rgb(106, 106, 224);
+    --primary-brown: brown;
+    --bg-light: #1e293b;
+    --text-dark: #f8fafc;
+    --card-white: #334155;
+    --nav-clr: #334155;
+    --line-clr: #475569;
+    --text-clr: #cbd5e1;
+    --accent-clr: #ef4444;
+    --hover-clr: #475569;
+
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -395,3 +413,217 @@ main {
 tr td li {
     list-style: none;
 }
+
+/* Targetkan nav-link tanpa merubah ukuran asli */
+#sidebar a, .nav-link{
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+#sidebar a:hover, .nav-link:hover {
+    transform: translateX(12px) scale(1.02) !important; /* MAJU KE KANAN */
+    background: rgba(239, 68, 68, 0.1) !important; /* Background merah tipis */
+    color: #ef4444 !important; /* Teks jadi merah */
+    
+    /* Efek Bayangan/Glow di belakang */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 
+                0 0 15px rgba(239, 68, 68, 0.3) !important; }
+
+#sidebar a:hover svg, .nav-link:hover svg {
+    transform: scale(1.1);
+    fill: #ef4444 !important;
+}
+
+/* Container Utama */
+.schedule-wrapper {
+    padding: 20px;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.main-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 20px;
+    border-left: 6px solid #ef4444;
+    padding-left: 15px;
+}
+
+/* Tabel Modern */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.modern-table thead th {
+    background: #ef4444;
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.modern-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    text-align: center;
+    transition: all 0.3s ease; /* Transisi buat hover */
+}
+
+/* Kolom Waktu */
+.time-tag {
+    font-weight: bold;
+    background: #f8fafc;
+    color: #ef4444 !important;
+}
+
+/* Baris Istirahat */
+.break-row {
+    background: #fef2f2 !important;
+    font-weight: bold;
+    color: #ef4444;
+    font-style: italic;
+}
+
+.piket-row {
+    background: #fef2f2 !important;
+    font-weight: bold;
+    color: #ef4444;
+    font-style: italic;
+}
+
+/* Mata Pelajaran Produktif/Jurusan */
+.prodi {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.extra-class {
+    background: #fff1f2;
+    font-weight: bold;
+}
+
+/* --- ANIMASI HOVER YANG KAMU MAU --- */
+.modern-table tbody tr:hover {
+    background-color: #fffafa; /* Warna merah super tipis pas di-hover */
+    transform: scale(1.005); /* Menonjol dikit banget biar rapi */
+    box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.05);
+}
+
+.modern-table td:hover {
+    color: #ef4444;
+    font-weight: bold;
+    cursor: default;
+    background: rgba(239, 68, 68, 0.05);
+    /* Efek Glow kecil */
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
+}
+
+/* Biar rapi di HP juga */
+@media (max-width: 768px) {
+    .table-container { overflow-x: auto; }
+}
+
+/* Container Utama Header */
+.main-header .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Kelompok Kanan (Teks + Bendera) */
+.navbar-right-elements {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Dorong semuanya ke kanan */
+    flex-grow: 1; /* Biar dia ambil sisa ruang kosong */
+    gap: 30px; /* Jarak antara teks dan bendera */
+}
+
+/* Teks Class Name */
+.brand-container {
+    text-align: left; /* Teks tetap rata kiri */
+    margin-right: auto; /* JURUS RAHASIA: Dorong elemen setelahnya (bendera) ke ujung kanan */
+}
+
+/* Kelompok Icon (Toggle & Bendera) */
+.right-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Ukuran Bendera biar pas */
+.indonesia-flag {
+    width: 30px; /* Perkecil sedikit biar elegan */
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.class-name {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Pastikan headernya punya posisi relative */
+.main-header .container-fluid {
+    position: relative; /* Biar bendera tau batas kanannya dimana */
+    display: flex;
+    justify-content: center; /* Ini yang bikin X RPL 1 otomatis di tengah */
+    align-items: center;
+    min-height: 80px;
+    padding: 0 20px;
+}
+
+/* Teks Class Name & P */
+.brand-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.class-name {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.brand-container p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* PAKSA BENDERA KE UJUNG KANAN */
+.flag-container {
+    position: absolute; /* Jurus maut: keluar dari aliran baris */
+    right: 20px;       /* Nempel di kanan, kasih jarak 20px dari pinggir */
+    top: 9%;          /* Di tengah secara vertikal */
+    transform: translateY(-50%); /* Pas di tengah vertikal beneran */
+    z-index: 9999;
+}
+
+.indonesia-flag {
+    width: 35px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Logo biar tetep di kiri */
+.navbar-brand {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
