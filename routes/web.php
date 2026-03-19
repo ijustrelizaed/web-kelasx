@@ -4,15 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pengumumanController;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\PiketController;
 
 // halaman public (guest & admin)
 Route::get('/', function () {
     return view('ringkasan');
 });
 
-Route::get('/piket', function () {
-    return view('piket');
-});
+Route::get('/piket', [PiketController::class, 'index'])->name('piket.index');
 
     // halaman public yang bisa diakses
 Route::get('/siswa', [siswaController::class, 'index'])->name('siswa.index');
@@ -42,6 +41,11 @@ Route::middleware(['auth'])->group(function() {
     Route::put('/siswa/{id}', [siswaController::class, 'update'])->name('siswa.update');
 
     Route::delete('/siswa/{id}', [siswaController::class, 'destroy'])->name('siswa.destroy');
+});
+
+Route::middleware(['auth'])->group(function() {
+
+    Route::post('/piket', [piketController::class, 'store'])->name('piket.store');
 });
 
 Route::middleware(['auth'])->group(function() {
