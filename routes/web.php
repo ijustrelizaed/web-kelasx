@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function() {
 });
 
 Route::middleware(['auth'])->group(function() {
-
+    Route::get('/piket/create', [piketController::class, 'create'])->name('piket.create');
     Route::post('/piket', [piketController::class, 'store'])->name('piket.store');
 });
 

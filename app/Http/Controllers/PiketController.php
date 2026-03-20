@@ -13,14 +13,12 @@ class PiketController extends Controller
 {
     public function index() 
     {   
-        $photo = photo_piket::where('expired_at', '<=', Carbon::now()->addDay());
-
-        $photo_expired = photo_piket::where('expired_at', '>', Carbon::now()->addDay());
-
-        if($photo_expired == true) {
-            Storage::disk('public')->delete($photo_expired->path());
-        }
+        $photo = photo_piket::where('expired_at', '>', Carbon::now())->first();
         return view('piket.index', compact('photo'));
+    }
+    
+    public function create() {
+        return View('piket.create');
     }
 
     public function store(Request $request) : RedirectResponse
@@ -30,11 +28,13 @@ class PiketController extends Controller
         ]);
         
         $path = $request->file('photo');
-        $path->storeAs('public/photos', $path->hashName());
+        $path->storeAs('public/photo', $path->hashName());
+
+        $expired_at = Carbon::now()->addDay();
 
         photo_piket::Create([
             'photo' => $path->hashName(),
-            'expired_at' => Carbon::now()->addDay(),
+            'expired_at' => $expired_at,
         ]);
 
         return redirect()->route('piket.index')->with('success', 'Data berhasil disimpan.');

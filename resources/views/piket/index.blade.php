@@ -1,12 +1,5 @@
 <x-layout>
-@auth
-<form action="{{ route('piket.store') }}" method="POST">
-    @csrf
-    <label for="photo">Masukkan Foto piket hari ini</label>
-    <input type="file" name="photo" id="photo" required>
-    <button type="submit">Submit</button>
-</form>
-@endauth
+    <a href="{{ route('piket.create') }}">create sini</a>
 <div class="card" style="padding: 0; overflow: hidden;">
     <table style="width: 100%; border-collapse: collapse;">
         <thead style="background: #f1f5f9;">
@@ -91,5 +84,11 @@
     </table>
 </div>
 
-<img src="{{ asset('storage/photo' . $photo->photo) }}" alt="poto piket" loading="lazy">
+<div>
+    @if ($photo)
+        <img src="{{ asset('storage/photo/' . $photo->photo) }}" alt="poto piket" loading="lazy">
+    @else
+        <p>tidak ada foto</p>
+    @endif
+</div>
 </x-layout>

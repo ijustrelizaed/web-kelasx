@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -16,8 +17,8 @@ class authController extends Controller
     }
 
     // login bekerja
-    public function login(Request $request) 
-    {   
+    public function login(Request $request) : RedirectResponse 
+    {
         // variabel untuk request dari user
         $userLogin = $request->only('name', 'password');
 
