@@ -5,11 +5,10 @@ use App\Http\Controllers\pengumumanController;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\PiketController;
+use App\Http\Controllers\ringkasanController;
 
 // halaman public (guest & admin)
-Route::get('/', function () {
-    return view('ringkasan');
-});
+Route::get('/', [ringkasanController::class, 'index'])->name('ringkasan.index');
 
 Route::get('/piket', [PiketController::class, 'index'])->name('piket.index');
 
