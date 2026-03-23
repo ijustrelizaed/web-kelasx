@@ -12,16 +12,16 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('app:delete-expired-photo')->everyMinutes();
+        $schedule->command('app:delete-expired-photo')->daily();
     }
 
     /**
      * Register the commands for the application.
      */
-    // protected function commands(): void
-    // {
-    //     $this->load(__DIR__.'/Commands');
+    protected function commands(): void
+    {
+        $this->load(__DIR__.'/Commands');
 
-    //     require base_path('routes/console.php');
-    // }
+        require base_path('routes/console.php');
+    }
 }

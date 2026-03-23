@@ -21,20 +21,17 @@ class DeleteExpiredPhoto extends Command
     //  *
     //  * @var string
     //  */
-    protected $description = 'Command description';
+    protected $description = 'Hapus foto setelah lebih dari 1 hari';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $expired_photo = photo_piket::where('expired_at', Carbon::now()->addDay());
+        $expired_photo = photo_piket::where('expired_at', '<=', Carbon::now())->get();
 
         foreach ($expired_photo as $delete) {
-            if ($delete->photo) {
-                Storage::delete('public/photo/' . $delete->photo);
-
-            }
+            Storage::disk('public')->delete($delete->path);
 
             $delete->delete();
         }
