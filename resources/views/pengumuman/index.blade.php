@@ -1,8 +1,10 @@
 <x-layout>
     <h1>ini halaman pengumuman</h1>
     <div>
-        <a href="{{ route('pengumuman.create') }}">Tambah Pengumuman</a>
-
+        @auth
+        <a href="{{ route('pengumuman.create') }}">Tambah Pengumuman</a>    
+        @endauth
+        
         <ul>
             @foreach ($allPengumuman as $pengumuman)
                 <li>
@@ -10,13 +12,14 @@
                     <p>{{ $pengumuman->isi }}</p>
                 </li>
                 <a href="{{ route('pengumuman.show', $pengumuman->id) }}">Lihat pengumuman</a>
+                @auth
                 <a href="{{ route('pengumuman.edit', $pengumuman->id) }}">Edit pengumuman</a>
-                </li>
                 <form action="{{ route('pengumuman.destroy', $pengumuman->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Hapus pengumuman</button>
                 </form>
+                @endauth
             @endforeach
         </ul>
     </div>

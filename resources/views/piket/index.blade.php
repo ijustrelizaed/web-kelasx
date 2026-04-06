@@ -1,4 +1,7 @@
 <x-layout>
+@auth
+    <a href="{{ route('piket.create') }}">create sini</a>
+@endauth
 <div class="card" style="padding: 0; overflow: hidden;">
     <table style="width: 100%; border-collapse: collapse;">
         <thead style="background: #f1f5f9;">
@@ -81,5 +84,13 @@
             </tr>
         </tbody>
     </table>
+</div>
+
+<div>
+    @if ($photo)
+        <img src="{{ asset('storage/photo/' . $photo->photo) }}" alt="poto piket" loading="lazy">
+    @else
+        <p>tidak ada foto</p>
+    @endif
 </div>
 </x-layout>
