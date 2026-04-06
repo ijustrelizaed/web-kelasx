@@ -391,7 +391,7 @@ tr td li {
     list-style: none;
 }
 
-<<<<<<< HEAD
+
 
 #sidebar a, .nav-link{
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
@@ -604,7 +604,7 @@ tr td li {
 }
 
 
-=======
+
 /* tombol login */
 .logbtn {
     display: inline-block;
@@ -666,4 +666,4 @@ tr td li {
     color: var(--text-dark);
     margin: 5px 0;
 }
->>>>>>> 7391c072775dc191147b6f3b5d2a806471ccc27a
+
